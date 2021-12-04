@@ -17,7 +17,7 @@ public class Main {
 
   static int part2(List<String> input) {
     return Integer.parseInt(part2_recursive(new ArrayList<>(input), 0, true), 2) *
-        Integer.parseInt(part2_recursive(input, 0, false), 2);
+           Integer.parseInt(part2_recursive(input, 0, false), 2);
   }
 
   private static String part2_recursive(List<String> input, int iteration, boolean oxygen) {

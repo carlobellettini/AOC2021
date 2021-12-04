@@ -2,7 +2,7 @@ package Day02;
 
 import static Day02.Main.part1;
 import static Day02.Main.part2;
-import static org.junit.Assert.*;
+import static org.assertj.core.api.Assertions.*;
 
 import Day00.Common;
 import org.junit.Before;
@@ -10,22 +10,22 @@ import org.junit.Test;
 
 import java.util.Scanner;
 
-public class Day02 {
+public class Day02Test {
 
   private Scanner input;
 
   @Before
-  public void setUp() throws Exception {
+  public void setUp()  {
     input = Common.readResourceToScanner(Main.class, "example-1.txt");
   }
 
   @Test
   public void part1Test() {
-    assertEquals("150  (= 15 * 10)", part1(input));
+    assertThat(part1(input)).isEqualTo("150  (= 15 * 10)");
   }
 
   @Test
   public void part2Test() {
-    assertEquals("900  (= 15 * 60)", part2(input));
+    assertThat(part2(input)).isEqualTo("900  (= 15 * 60)");
   }
 }

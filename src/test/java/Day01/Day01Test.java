@@ -1,7 +1,7 @@
 package Day01;
 
 import static Day01.Main.sum;
-import static org.junit.Assert.*;
+import static org.assertj.core.api.Assertions.*;
 
 import Day00.Common;
 import org.junit.Before;
@@ -9,22 +9,22 @@ import org.junit.Test;
 
 import java.util.Scanner;
 
-public class Day01 {
+public class Day01Test {
 
   private Scanner input;
 
   @Before
-  public void setUp() throws Exception {
+  public void setUp()  {
     input = Common.readResourceToScanner(Main.class, "example-1.txt");
   }
 
   @Test
   public void sumTest() {
-    assertEquals(7, sum(1, input));
+    assertThat(sum(1, input)).isEqualTo(7);
   }
 
   @Test
   public void sum3Test() {
-    assertEquals(5, sum(3, input));
+    assertThat(sum(3, input)).isEqualTo(5);
   }
 }

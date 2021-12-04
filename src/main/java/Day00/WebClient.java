@@ -9,7 +9,7 @@ public class WebClient {
     CookieHandler.setDefault(new CookieManager());
 
     HttpCookie sessionCookie = new HttpCookie("session", SessionSecrets.key);
-    sessionCookie.setPath("/");..
+    sessionCookie.setPath("/");
     sessionCookie.setVersion(0);
 
     try {

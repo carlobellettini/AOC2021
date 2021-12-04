@@ -27,7 +27,7 @@ public class FetchInput {
     this.client = Day00.WebClient.getClient();
   }
 
-  public static void main(String[] args) throws Exception {
+  public static void main(String[] args)  {
     new FetchInput().retrieveDay("4", "2021");
   }
 
