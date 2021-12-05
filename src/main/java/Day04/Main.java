@@ -1,6 +1,7 @@
 package Day04;
 
 import Day00.Common;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
@@ -12,7 +13,7 @@ public class Main {
     System.out.println("DAY 4 Part 2: " + part2(listOfStrings));
   }
 
-  static String part1(List<String> input) {
+  static String part1(@NotNull List<String> input) {
     Bingo gioco = new Bingo(input.get(0));
     gioco.aggiungiTessere(input);
 
@@ -25,7 +26,7 @@ public class Main {
   }
 
 
-  static String part1After2(List<String> input) {
+  static String part1After2(@NotNull List<String> input) {
     Bingo gioco = new Bingo(input.get(0));
     gioco.aggiungiTessere(input);
 
@@ -44,7 +45,7 @@ public class Main {
     return ""+punti;
   }
 
-  static String part2(List<String> input) {
+  static String part2(@NotNull List<String> input) {
 
     Bingo gioco = new Bingo(input.get(0));
 

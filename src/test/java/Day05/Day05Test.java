@@ -6,6 +6,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.InstanceOfAssertFactories.MAP;
 
 import Day00.Common;
+import Day05.Griglia.Point;
 import org.junit.Before;
 import org.junit.Test;
 
