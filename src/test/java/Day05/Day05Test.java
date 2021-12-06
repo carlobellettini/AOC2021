@@ -18,7 +18,7 @@ public class Day05Test {
 
   @Before
   public void setUp() {
-    listOfStrings = Common.readResourceToStringList(Main.class, "example-1.txt");
+    listOfStrings = Common.stringListInput(Main.class, "example-1.txt");
   }
 
 
@@ -78,13 +78,13 @@ public class Day05Test {
 
   @Test
   public void part1TestReal() {
-    listOfStrings = Common.readResourceToStringList(Main.class, "input.txt");
+    listOfStrings = Common.stringListInput(Main.class, "input.txt");
     assertThat(Main.part1(listOfStrings)).isEqualTo("8622");
   }
 
   @Test
   public void part2TestReal() {
-    listOfStrings = Common.readResourceToStringList(Main.class, "input.txt");
+    listOfStrings = Common.stringListInput(Main.class, "input.txt");
     assertThat(Main.part2(listOfStrings)).isEqualTo("22037");
   }
 }

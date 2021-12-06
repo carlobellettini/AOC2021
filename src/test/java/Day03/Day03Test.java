@@ -17,7 +17,7 @@ public class Day03Test {
   List<String> listOfStrings;
   @Before
   public void setUp()  {
-    listOfStrings = Common.readResourceToStringList(Main.class, "example-1.txt");
+    listOfStrings = Common.stringListInput(Main.class, "example-1.txt");
   }
 
   @Test

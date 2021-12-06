@@ -8,9 +8,9 @@ public class Main {
   public static void main(String[] args) {
 
     System.out.println("DAY 1 Part 1: " + sum(1,
-        Common.readResourceToScanner(Main.class,"input.txt")));
+        Common.scannerInput(Main.class,"input.txt")));
     System.out.println("DAY 1 Part 2: " + sum(3,
-        Common.readResourceToScanner(Main.class,"input.txt")));
+        Common.scannerInput(Main.class,"input.txt")));
 
   }
   
@@ -33,5 +33,6 @@ public class Main {
       window[i] = input.nextInt();
     }
   }
+
 
 }

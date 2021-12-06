@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Main {
   public static void main(String[] args) {
-    List<String> listOfStrings = Common.readResourceToStringList(Main.class, "input.txt");
+    List<String> listOfStrings = Common.stringListInput(Main.class, "input.txt");
 
     System.out.println("DAY 5 Part 1: " + part1(listOfStrings));
     System.out.println("DAY 5 Part 2: " + part2(listOfStrings));

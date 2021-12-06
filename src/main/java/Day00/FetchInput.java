@@ -28,7 +28,7 @@ public class FetchInput {
   }
 
   public static void main(String[] args)  {
-    new FetchInput().retrieveDay("5", "2021");
+    new FetchInput().retrieveDay("6", "2021");
   }
 
   private void retrieveDay(String day, String year) {

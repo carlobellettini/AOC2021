@@ -15,7 +15,7 @@ public class Day01Test {
 
   @Before
   public void setUp()  {
-    input = Common.readResourceToScanner(Main.class, "example-1.txt");
+    input = Common.scannerInput(Main.class, "example-1.txt");
   }
 
   @Test

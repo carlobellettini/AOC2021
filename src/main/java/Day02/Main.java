@@ -9,8 +9,8 @@ import java.util.Scanner;
 public class Main {
   public static void main(String[] args) {
 
-    System.out.println("DAY 2 Part 1: " + part1(Common.readResourceToScanner(Main.class, "input.txt")));
-    System.out.println("DAY 2 Part 2: " + part2(Common.readResourceToScanner(Main.class, "input.txt")));
+    System.out.println("DAY 2 Part 1: " + part1(Common.scannerInput(Main.class, "input.txt")));
+    System.out.println("DAY 2 Part 2: " + part2(Common.scannerInput(Main.class, "input.txt")));
 
   }
 
