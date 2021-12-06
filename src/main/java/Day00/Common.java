@@ -26,8 +26,12 @@ public class Common {
     return stringInput;
   }
 
-  static public String stringInput(Class o, String name) throws IOException {
-    return IOUtils.toString(o.getResourceAsStream(name), StandardCharsets.UTF_8.name());
+  static public String stringInput(Class o, String name)  {
+    try {
+      return IOUtils.toString(o.getResourceAsStream(name), StandardCharsets.UTF_8.name());
+    } catch (IOException e) {
+      throw new IllegalStateException("Fallita lettura risorsa in stringa");
+    }
   }
 
 }
