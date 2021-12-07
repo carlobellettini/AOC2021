@@ -23,7 +23,7 @@ import java.util.stream.IntStream;
 public class FetchInput {
   private final HttpClient client;
 
-  private FetchInput() {
+  public FetchInput() {
     this.client = Day00.WebClient.getClient();
   }
 
@@ -31,7 +31,7 @@ public class FetchInput {
     new FetchInput().retrieveDay("6", "2021");
   }
 
-  private void retrieveDay(String day, String year) {
+  public void retrieveDay(String day, String year) {
     retrieveInput(day, year);
     retrieveExamples(day, year);
   }

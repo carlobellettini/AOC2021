@@ -1,14 +1,12 @@
 package Day00;
 
 
-
 import static org.assertj.core.api.Assertions.assertThat;
 
-
+import Day00.FetchInput;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
-
 
 
 public class Day00Test {
@@ -18,6 +16,12 @@ public class Day00Test {
   @Before
   public void setUp() {
     day = new Day();
+  }
+
+
+  @Test@Ignore
+  public void getInputFiles() {
+    new FetchInput().retrieveDay("0", "2020");
   }
 
   @Test@Ignore
