@@ -3,7 +3,6 @@ package Day08;
 import Day00.Day;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -41,7 +40,7 @@ public class Day08 extends Day {
   }
 
   public String sort(String input) {
-    char tempArray[] = input.toCharArray();
+    char[] tempArray = input.toCharArray();
     Arrays.sort(tempArray);
     return new String(tempArray);
   }
@@ -78,34 +77,32 @@ public class Day08 extends Day {
     int c = numberString[8].chars().filter(e -> numberString[6].indexOf(e) < 0).findFirst().getAsInt(); //C
     int f = numberString[1].chars().filter(e -> e != c).findFirst().getAsInt();                         //F
 
-    numberString[2] = getNumberString(numbers, List.of(f), 5, 5);                  //ABDFG
-    numberString[3] = getNumberString(numbers, cf, 5, 3);                          //ACDFG
-    numberString[5] = getNumberString(numbers, List.of(c), 5, 5);                  //ABDFG
+    numberString[2] = getNumberString(numbers, List.of(f), 5, 5);                 //ACDFG
+    numberString[5] = getNumberString(numbers, List.of(c), 5, 5);
+    numberString[3] = getNumberString(numbers, cf, 5, 3);                         //ABDFG
     numberString[9] = getNumberString(numbers, getCharSet(numberString[4]), 6, 2); //ABCDFG
 
-    List<String> allNumbers = new ArrayList<>(List.of(numbers));
-    Arrays.stream(numberString, 1, 10).forEach(allNumbers::remove);
-    numberString[0] = allNumbers.stream().findFirst().get();                                         //ABCEFG
+    numberString[0] = Arrays.stream(numbers)
+        .filter(val -> !List.of(Arrays.copyOfRange(numberString, 1, 10)).contains(val)).findFirst().get(); //the last remaining one
 
     return numberString;
   }
 
-  private String getNumberString(String[] numbers, int dim) {
-    return Arrays.stream(numbers).filter(e -> e.trim().length() == dim).findFirst().get();
-  }
 
   @NotNull
   private List<Integer> getCharSet(String s) {
     return s.chars().boxed().toList();
   }
 
+  @NotNull
+  private String getNumberString(String[] numbers, int dim) {
+    return Arrays.stream(numbers).filter(e -> e.trim().length() == dim).findFirst().get();
+  }
+
+  @NotNull
   private String getNumberString(String[] numbers, List<Integer> toRemove, int dimBefore, int dimAfter) {
     return Arrays.stream(numbers)
         .filter(e -> e.trim().length() == dimBefore)
-        .filter(e -> {
-          List<Integer> cand = new ArrayList<Integer>(e.chars().boxed().toList());
-          cand.removeAll(toRemove);
-          return cand.size() == dimAfter;
-        }).findFirst().get();
+        .filter(e -> e.chars().filter(val -> !toRemove.contains(val)).count() == dimAfter).findFirst().get();
   }
 }
