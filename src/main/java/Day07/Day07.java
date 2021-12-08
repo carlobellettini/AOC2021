@@ -33,6 +33,11 @@ public class Day07 extends Day {
     int max = pos.stream().max(Comparator.naturalOrder()).get();
 
     return "" + getMinCost(pos, min, max, (start, end) -> ((Math.abs(end - start) + 1) * Math.abs(end - start)) / 2);
+
+  }
+
+  private int getMinCost(List<Integer> pos, int min, int max, ToIntBiFunction<Integer, Integer> cost) {
+    return IntStream.rangeClosed(min, max).map(val -> pos.stream().mapToInt(e -> cost.applyAsInt(val, e)).sum()).min().getAsInt();
   }
 
   @NotNull
