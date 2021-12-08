@@ -10,34 +10,15 @@ import java.util.stream.Stream;
 public class Day08 extends Day {
   @Override
   protected String part1() {
-    List<String> input = inputAsList();
-
-    int counter = 0;
-    for (String s : input) {
-      String[] part = s.split("\\|");
-
-      for (String num : part[1].split(" ")) {
-        if (List.of(2, 3, 4, 7).contains(num.length()))
-          counter++;
-      }
-    }
-    return "" + counter;
+    return "" + inputAsList().stream().map(s -> s.split("\\|"))
+        .mapToInt(part -> (int) Stream.of(part[1].split(" "))
+            .filter(num -> List.of(2, 3, 4, 7).contains(num.length())).count()).sum();
   }
 
   @Override
   protected String part2() {
-    List<String> input = inputAsList();
-
-    int counter = 0;
-
-    for (String s : input) {
-      String[] numberString = new String[10];
-      String[] part = s.split("\\|");
-
-      int value = valDecoded(decode(part[0]), part[1]);
-      counter += value;
-    }
-    return "" + counter;
+    return "" + inputAsList().stream().map(s -> s.split("\\|"))
+        .mapToInt(part -> valDecoded(decode(part[0]), part[1])).sum();
   }
 
   public String sort(String input) {
@@ -57,9 +38,8 @@ public class Day08 extends Day {
 
   private int valDecoded(String[] decoded, String s) {
     int value = 0;
-    for (String cifra : s.trim().split(" ")) {
+    for (String cifra : s.trim().split(" "))
       value = value * 10 + indiceDi(cifra, decoded);
-    }
     return value;
   }
 
