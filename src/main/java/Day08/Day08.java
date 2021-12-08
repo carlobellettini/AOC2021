@@ -5,6 +5,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class Day08 extends Day {
   @Override
@@ -82,7 +83,7 @@ public class Day08 extends Day {
     numberString[3] = getNumberString(numbers, cf, 5, 3);                         //ABDFG
     numberString[9] = getNumberString(numbers, getCharSet(numberString[4]), 6, 2); //ABCDFG
 
-    numberString[0] = Arrays.stream(numbers)
+    numberString[0] = Stream.of(numbers)
         .filter(val -> !List.of(Arrays.copyOfRange(numberString, 1, 10)).contains(val)).findFirst().get(); //the last remaining one
 
     return numberString;
@@ -96,12 +97,12 @@ public class Day08 extends Day {
 
   @NotNull
   private String getNumberString(String[] numbers, int dim) {
-    return Arrays.stream(numbers).filter(e -> e.trim().length() == dim).findFirst().get();
+    return Stream.of(numbers).filter(e -> e.trim().length() == dim).findFirst().get();
   }
 
   @NotNull
   private String getNumberString(String[] numbers, List<Integer> toRemove, int dimBefore, int dimAfter) {
-    return Arrays.stream(numbers)
+    return Stream.of(numbers)
         .filter(e -> e.trim().length() == dimBefore)
         .filter(e -> e.chars().filter(val -> !toRemove.contains(val)).count() == dimAfter).findFirst().get();
   }
