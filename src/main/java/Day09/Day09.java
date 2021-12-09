@@ -1,6 +1,7 @@
 package Day09;
 
 import Day00.Day;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 import java.util.stream.Stream;
@@ -91,28 +92,17 @@ public class Day09 extends Day {
     int cols = input.get(0).length();
     int[][] mat = readMatrix(input, rows);
 
-    int biasinNum = 1;
-    for (int r = 0; r < rows; r++)
-      for (int c = 0; c < cols; c++)
-        if (minimo(mat, r, c, rows, cols))
-          mat[r][c] = -(biasinNum++);
+    int biasinNum = marcaMinimi(rows, cols, mat);
 
-    boolean modificata = true;
-    while (modificata) {
-      modificata = false;
-      for (int r = 0; r < rows; r++) {
-        for (int c = 0; c < cols; c++) {
-          if (mat[r][c] != 9 && mat[r][c] > 0) {
-            Optional<Integer> biasin = adiacenteABiasin(mat, r, c, rows, cols);
-            if (biasin.isPresent()) {
-              mat[r][c] = biasin.get();
-              modificata = true;
-            }
-          }
-        }
-      }
-    }
+    espandiMinimiABacini(rows, cols, mat);
 
+    int[] biasinSizes = calcolaDimensioneBacini(rows, cols, mat, biasinNum);
+
+    int[] sol = Arrays.stream(biasinSizes).boxed().sorted(Comparator.reverseOrder()).mapToInt(e-> e).toArray();
+    return ""+(sol[0]*sol[1]*sol[2]);
+  }
+
+  private int[] calcolaDimensioneBacini(int rows, int cols, int[][] mat, int biasinNum) {
     int [] biasinSizes = new int[biasinNum];
     for (int r = 0; r < rows; r++) {
       for (int c = 0; c < cols; c++) {
@@ -120,9 +110,32 @@ public class Day09 extends Day {
           biasinSizes[-mat[r][c]]++;
       }
     }
+    return biasinSizes;
+  }
 
-    int[] sol = Arrays.stream(biasinSizes).boxed().sorted(Comparator.reverseOrder()).mapToInt(e-> e).toArray();
-    return ""+(sol[0]*sol[1]*sol[2]);
+  private void espandiMinimiABacini(int rows, int cols, int[][] mat) {
+    boolean modificata = true;
+    while (modificata) {
+      modificata = false;
+      for (int r = 0; r < rows; r++)
+        for (int c = 0; c < cols; c++)
+          if (mat[r][c] != 9 && mat[r][c] > 0) {
+            Optional<Integer> biasin = adiacenteABiasin(mat, r, c, rows, cols);
+            if (biasin.isPresent()) {
+              mat[r][c] = biasin.get();
+              modificata = true;
+            }
+          }
+    }
+  }
+
+  private int marcaMinimi(int rows, int cols, int[][] mat) {
+    int biasinNum = 1;
+    for (int r = 0; r < rows; r++)
+      for (int c = 0; c < cols; c++)
+        if (minimo(mat, r, c, rows, cols))
+          mat[r][c] = -(biasinNum++);
+    return biasinNum;
   }
 
   private Optional<Integer> adiacenteABiasin(int[][] mat, int r, int c, int rows, int cols) {
