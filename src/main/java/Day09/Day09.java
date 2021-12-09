@@ -2,10 +2,8 @@ package Day09;
 
 import Day00.Day;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Stream;
 
 public class Day09 extends Day {
   @Override
@@ -25,8 +23,18 @@ public class Day09 extends Day {
     return "" + riskLevel;
   }
 
+
   @Override
   protected String part2() {
+    String ans1 = part2_recursive();
+    String ans2 = part2_iterative();
+
+    assert (ans1.equals(ans2));
+
+    return ans1;
+  }
+
+  private String part2_recursive() {
     List<String> input = inputAsList();
 
     int rows = input.size();
@@ -51,7 +59,7 @@ public class Day09 extends Day {
     int[][] mat = new int[rows][];
 
     for (int i = 0; i < input.size(); i++) {
-      mat[i] = Arrays.stream(input.get(i).split("")).mapToInt(Integer::parseInt).toArray();
+      mat[i] = Stream.of(input.get(i).split("")).mapToInt(Integer::parseInt).toArray();
     }
     return mat;
   }
@@ -74,5 +82,54 @@ public class Day09 extends Day {
         calBasin(mat, r, c - 1, rows, cols) +
         calBasin(mat, r + 1, c, rows, cols) +
         calBasin(mat, r, c + 1, rows, cols);
+  }
+
+  private  String part2_iterative() {
+    List<String> input = inputAsList();
+
+    int rows = input.size();
+    int cols = input.get(0).length();
+    int[][] mat = readMatrix(input, rows);
+
+    int biasinNum = 1;
+    for (int r = 0; r < rows; r++)
+      for (int c = 0; c < cols; c++)
+        if (minimo(mat, r, c, rows, cols))
+          mat[r][c] = -(biasinNum++);
+
+    boolean modificata = true;
+    while (modificata) {
+      modificata = false;
+      for (int r = 0; r < rows; r++) {
+        for (int c = 0; c < cols; c++) {
+          if (mat[r][c] != 9 && mat[r][c] > 0) {
+            Optional<Integer> biasin = adiacenteABiasin(mat, r, c, rows, cols);
+            if (biasin.isPresent()) {
+              mat[r][c] = biasin.get();
+              modificata = true;
+            }
+          }
+        }
+      }
+    }
+
+    int [] biasinSizes = new int[biasinNum];
+    for (int r = 0; r < rows; r++) {
+      for (int c = 0; c < cols; c++) {
+        if (mat[r][c] != 9)
+          biasinSizes[-mat[r][c]]++;
+      }
+    }
+
+    int[] sol = Arrays.stream(biasinSizes).boxed().sorted(Comparator.reverseOrder()).mapToInt(e-> e).toArray();
+    return ""+(sol[0]*sol[1]*sol[2]);
+  }
+
+  private Optional<Integer> adiacenteABiasin(int[][] mat, int r, int c, int rows, int cols) {
+    if (r > 0 && mat[r - 1][c] < 0) return Optional.of(mat[r - 1][c]);
+    if (c > 0 && mat[r][c - 1] < 0) return Optional.of(mat[r][c - 1]);
+    if (r < rows - 1 && mat[r + 1][c] < 0) return Optional.of(mat[r + 1][c]);
+    if (c < cols - 1 && mat[r][c + 1] < 0) return Optional.of(mat[r][c + 1]);
+    return Optional.empty();
   }
 }
