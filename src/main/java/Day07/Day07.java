@@ -15,20 +15,20 @@ public class Day07 extends Day {
   protected String part1() {
     Scanner scanner = inputAsScanner();
     List<Integer> pos = getIntegerList(scanner);
+
     int min = pos.stream().min(Comparator.naturalOrder()).get();
     int max = pos.stream().max(Comparator.naturalOrder()).get();
 
     return "" + getMinCost(pos, min, max, (start, end) -> Math.abs(end - start));
   }
 
-  private int getMinCost(List<Integer> pos, int min, int max, ToIntBiFunction<Integer, Integer> cost) {
-    return IntStream.rangeClosed(min, max).map(val -> pos.stream().mapToInt(e -> cost.applyAsInt(val, e)).sum()).min().getAsInt();
-  }
+
 
   @Override
   protected String part2() {
     Scanner scanner = inputAsScanner();
     List<Integer> pos = getIntegerList(scanner);
+
     int min = pos.stream().min(Comparator.naturalOrder()).get();
     int max = pos.stream().max(Comparator.naturalOrder()).get();
 
