@@ -1,6 +1,6 @@
 package Day05;
 
-import static Day00.ReadsFormattedString.readString;
+
 
 import org.jetbrains.annotations.NotNull;
 
@@ -18,8 +18,13 @@ public class Griglia {
   }
 
   void addLine(@NotNull String line) {
-    Line l = readString(line, "%d,%d -> %d,%d", Line.class);
-    addLine(l.xStart, l.yStart, l.xEnd, l.yEnd);
+    //Line l = readString(line, "%d,%d -> %d,%d", Line.class);
+    //addLine(l.xStart, l.yStart, l.xEnd, l.yEnd);
+    String[] points = line.split(" -> ");
+    addLine(Integer.parseInt(points[0].split(",")[0]),
+        Integer.parseInt(points[0].split(",")[1]),
+        Integer.parseInt(points[1].split(",")[0]),
+        Integer.parseInt(points[1].split(",")[1]));
   }
 
   void addLine(int x1, int y1, int x2, int y2) {
@@ -66,5 +71,5 @@ public class Griglia {
   public record Point(int x, int y) {
   }
 
-  public record Line(int xStart, int yStart, int xEnd, int yEnd){};
+  public record Line(int xStart, int yStart, int xEnd, int yEnd){}
 }
