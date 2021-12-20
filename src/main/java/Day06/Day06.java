@@ -36,7 +36,7 @@ public class Day06 extends Day {
 
   private  void nuovoGiorno(long[] lanterfish) {
     long nuoviNati = lanterfish[0];
-    for (int i = 0; i < 8; i++) lanterfish[i] = lanterfish[i + 1];
+    System.arraycopy(lanterfish, 1, lanterfish, 0, 8);
     lanterfish[6] += nuoviNati;
     lanterfish[8] = nuoviNati;
   }

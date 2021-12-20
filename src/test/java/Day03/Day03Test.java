@@ -1,7 +1,7 @@
 package Day03;
 
-import static Day03.Main.part1;
-import static Day03.Main.part2;
+import static Day03.Day03.part1;
+import static Day03.Day03.part2;
 import static org.assertj.core.api.Assertions.assertThat;
 
 
@@ -17,7 +17,7 @@ public class Day03Test {
   List<String> listOfStrings;
   @Before
   public void setUp()  {
-    listOfStrings = Common.stringListInput(Main.class, "example-1.txt");
+    listOfStrings = Common.stringListInput(Day03.class, "example-1.txt");
   }
 
   @Test

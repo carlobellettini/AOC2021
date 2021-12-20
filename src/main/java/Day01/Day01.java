@@ -1,18 +1,11 @@
 package Day01;
 
 import Day00.Common;
+import Day00.Day;
 
 import java.util.Scanner;
 
-public class Main {
-  public static void main(String[] args) {
-
-    System.out.println("DAY 1 Part 1: " + sum(1,
-        Common.scannerInput(Main.class,"input.txt")));
-    System.out.println("DAY 1 Part 2: " + sum(3,
-        Common.scannerInput(Main.class,"input.txt")));
-
-  }
+public class Day01 extends Day {
   
   static int sum(int windowSize, Scanner input) {
     int[] window = new int[windowSize];
@@ -34,5 +27,13 @@ public class Main {
     }
   }
 
+  @Override
+  protected String part1() {
+    return ""+sum(1, inputAsScanner());
+  }
 
+  @Override
+  protected String part2() {
+    return ""+sum(3, inputAsScanner());
+  }
 }

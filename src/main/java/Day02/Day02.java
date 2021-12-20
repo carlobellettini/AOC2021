@@ -6,14 +6,7 @@ import Day00.Common;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Main {
-  public static void main(String[] args) {
-
-    System.out.println("DAY 2 Part 1: " + part1(Common.scannerInput(Main.class, "input.txt")));
-    System.out.println("DAY 2 Part 2: " + part2(Common.scannerInput(Main.class, "input.txt")));
-
-  }
-
+public class Day02 {
 
   static String part1(Scanner input) {
     IPosition pos1 = new Position();
@@ -27,13 +20,9 @@ public class Main {
     return pos.toString();
   }
 
-
-
-
   interface IPosition {
     void executeCommands(Scanner input);
   }
-
 
   private static class Position implements IPosition {
     int h;

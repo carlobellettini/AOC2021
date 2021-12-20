@@ -1,7 +1,7 @@
 package Day02;
 
-import static Day02.Main.part1;
-import static Day02.Main.part2;
+import static Day02.Day02.part1;
+import static Day02.Day02.part2;
 import static org.assertj.core.api.Assertions.*;
 
 import Day00.Common;
@@ -16,7 +16,7 @@ public class Day02Test {
 
   @Before
   public void setUp()  {
-    input = Common.scannerInput(Main.class, "example-1.txt");
+    input = Common.scannerInput(Day02.class, "example-1.txt");
   }
 
   @Test

@@ -5,9 +5,9 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
-public class Main {
+public class Day04 {
   public static void main(String[] args) {
-    List<String> listOfStrings = Common.stringListInput(Main.class, "input.txt");
+    List<String> listOfStrings = Common.stringListInput(Day04.class, "input.txt");
 
     System.out.println("DAY 4 Part 1: " + part1After2(listOfStrings));
     System.out.println("DAY 4 Part 2: " + part2(listOfStrings));

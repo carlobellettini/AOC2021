@@ -1,30 +1,44 @@
 package Day01;
 
-import static Day01.Main.sum;
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
-import Day00.Common;
-import org.junit.Before;
+
+import Day00.FetchInput;
+import org.junit.Ignore;
 import org.junit.Test;
 
-import java.util.Scanner;
 
 public class Day01Test {
 
-  private Scanner input;
 
-  @Before
-  public void setUp()  {
-    input = Common.scannerInput(Main.class, "example-1.txt");
+  private Day01 create(){
+    return new Day01();
+  }
+
+  @Test@Ignore
+  public void getInputFiles() {
+    new FetchInput().retrieveDay("1", "2021");
   }
 
   @Test
-  public void sumTest() {
-    assertThat(sum(1, input)).isEqualTo(7);
+  public void part1Test() {
+    assertThat(create().part1("example-1.txt")).isEqualTo("7");
+    System.err.println("SOLUZIONE PARTE 1: <" + create().part1()+">");
   }
 
   @Test
-  public void sum3Test() {
-    assertThat(sum(3, input)).isEqualTo(5);
+  public void part2Test() {
+    assertThat(create().part2("example-1.txt")).isEqualTo("5");
+    System.err.println("SOLUZIONE PARTE 2: <" + create().part2()+">");
+  }
+
+  @Test
+  public void part1TestReal() {
+    assertThat(create().part1()).isEqualTo("1466");
+  }
+
+  @Test
+  public void part2TestReal() {
+    assertThat(create().part2()).isEqualTo("1491");
   }
 }

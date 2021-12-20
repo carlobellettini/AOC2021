@@ -7,7 +7,6 @@ import static org.assertj.core.api.InstanceOfAssertFactories.INT_2D_ARRAY;
 
 import Day00.Common;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.List;
@@ -19,7 +18,7 @@ public class Day04Test {
 
   @Before
   public void setUp()  {
-    listOfStrings = Common.stringListInput(Main.class, "example-1.txt");
+    listOfStrings = Common.stringListInput(Day04.class, "example-1.txt");
   }
 
   @Test
@@ -76,12 +75,6 @@ public class Day04Test {
   }
 
   @Test
-  public void testTesseraToString() {
-    Tessera SUT = new Tessera(listOfStrings.subList(14, 14 + 5));
-    System.out.println(SUT);
-  }
-
-  @Test
   public void TestPunteggioTessera() {
     Tessera SUT = new Tessera(listOfStrings.subList(14, 14 + 5));
 
@@ -94,25 +87,23 @@ public class Day04Test {
 
   @Test
   public void part1Test() {
-    assertThat(Main.part1(listOfStrings)).isEqualTo("4512");
+    assertThat(Day04.part1(listOfStrings)).isEqualTo("4512");
   }
 
   @Test
   public void part2Test() {
-    assertThat(Main.part2(listOfStrings)).isEqualTo("1924");
+    assertThat(Day04.part2(listOfStrings)).isEqualTo("1924");
   }
 
   @Test
-  @Ignore
   public void part1TestReal() {
-    assertThat(Main.part1(Common.stringListInput(Main.class, "input.txt"))).isEqualTo("49686");
-    assertThat(Main.part1After2(Common.stringListInput(Main.class, "input.txt"))).isEqualTo("49686");
+    assertThat(Day04.part1(Common.stringListInput(Day04.class, "input.txt"))).isEqualTo("49686");
+    assertThat(Day04.part1After2(Common.stringListInput(Day04.class, "input.txt"))).isEqualTo("49686");
   }
 
   @Test
-  @Ignore
   public void part2TestReal() {
-    assertThat(Main.part2(Common.stringListInput(Main.class, "input.txt"))).isEqualTo("26878");
+    assertThat(Day04.part2(Common.stringListInput(Day04.class, "input.txt"))).isEqualTo("26878");
 
   }
 }

@@ -3,6 +3,7 @@ package Day11;
 import Day00.Day;
 import Day00.Mat;
 
+import java.util.stream.IntStream;
 
 public class Day11 extends Day {
 
@@ -11,9 +12,7 @@ public class Day11 extends Day {
     Mat11 m = new Mat11();
     m.readFrom(inputAsList());
 
-    long flashed = 0;
-    for (int i = 0; i < 100; i++)
-      flashed += m.step();
+    long flashed = IntStream.range(0, 100).mapToLong(i -> m.step()).sum();
     return String.valueOf(flashed);
   }
 
@@ -33,7 +32,6 @@ public class Day11 extends Day {
   }
 }
 
-
 class Mat11 extends Mat {
   long step() {
     long flashed = 0;
@@ -44,19 +42,17 @@ class Mat11 extends Mat {
       for (int c = 0; c < columns(); c++)
         if (mat[r][c] > 9)
           flashed += flash(r, c);
-
     return flashed;
   }
 
   private long flash(int r, int c) {
     long flashed = 1;
     mat[r][c] = 0;
-    for (CelleVicineEDiag d : CelleVicineEDiag.values())
-      if (valide(r + d.r, c + d.c) &&
-          mat[r + d.r][c + d.c] != 0) {
-        mat[r + d.r][c + d.c]++;
-        if (mat[r + d.r][c + d.c] > 9)
-          flashed += flash(r + d.r, c + d.c);
+    for (CelleVicineEDiag vicina : CelleVicineEDiag.values())
+      if (valida(vicina, r, c) && valore(vicina, r, c) != 0) {
+        mat[r + vicina.r][c + vicina.c]++;
+        if (valore(vicina, r, c) > 9)
+          flashed += flash(r + vicina.r, c + vicina.c);
       }
     return flashed;
   }

@@ -6,10 +6,10 @@ import Day00.Common;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Main {
+public class Day03 {
 
   public static void main(String[] args) {
-    List<String> listOfStrings = Common.stringListInput(Main.class, "input.txt");
+    List<String> listOfStrings = Common.stringListInput(Day03.class, "input.txt");
 
     System.out.println("DAY 3 Part 1: " + part1(listOfStrings));
     System.out.println("DAY 3 Part 2: " + part2(listOfStrings));

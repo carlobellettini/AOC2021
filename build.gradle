@@ -16,6 +16,9 @@ dependencies {
 
     testImplementation 'junit:junit:4.13.2'
 
-    implementation 'org.assertj:assertj-core:3.21.0'
+    testImplementation 'org.assertj:assertj-core:3.21.0'
+    implementation 'com.github.stefanbirkner:system-rules:1.19.0'
+    //implementation 'org.apache.commons:commons-collections4:4.4'
+    implementation 'com.github.dpaukov:combinatoricslib3:3.3.2'
 }
 

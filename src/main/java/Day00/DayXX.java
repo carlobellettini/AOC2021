@@ -9,7 +9,7 @@ public class DayXX extends Day {
   protected String part1() {
     List<String> input = inputAsList();
     for (String line : input) {
-
+      System.out.println(line);
     }
     return super.part1();
   }

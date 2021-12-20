@@ -94,7 +94,7 @@ class Mat11Anim extends Mat {
     mat[r][c] = 0;
     stampaElem(r, c);
     for (CelleVicineEDiag d : CelleVicineEDiag.values()) {
-      if (valide(r + d.r, c + d.c) &&
+      if (valida(r + d.r, c + d.c) &&
           mat[r + d.r][c + d.c] != 0) {
         mat[r + d.r][c + d.c]++;
         stampaElem(r + d.r, c + d.c);
