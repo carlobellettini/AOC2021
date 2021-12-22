@@ -1,7 +1,7 @@
-package Day20;
+package day20;
 
-import Day00.Day;
-import Day00.Mat;
+import day00.Day;
+import day00.Mat;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;

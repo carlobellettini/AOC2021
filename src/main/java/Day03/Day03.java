@@ -1,7 +1,7 @@
-package Day03;
+package day03;
 
 
-import Day00.Common;
+import day00.Common;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,14 +1,14 @@
-package Day17;
+package day17;
 
-import Day00.Day;
-import Day00.ReadsFormattedString;
+import day00.Day;
+import day00.ReadsFormattedString;
 
 import java.util.Optional;
 
 
 public class Day17 extends Day {
 
-  Target t;
+  private Target t;
 
   @Override
   protected String part1() {

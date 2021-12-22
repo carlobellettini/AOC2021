@@ -1,8 +1,8 @@
-package Day14;
+package day14;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import Day00.FetchInput;
+import day00.FetchInput;
 import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;

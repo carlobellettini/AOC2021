@@ -1,4 +1,4 @@
-package Day00;
+package day00;
 
 import java.util.List;
 import java.util.stream.Stream;

@@ -1,9 +1,9 @@
-package Day07;
+package day07;
 
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import Day00.FetchInput;
+import day00.FetchInput;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;

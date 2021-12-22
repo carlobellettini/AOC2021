@@ -1,18 +1,33 @@
-package Day00;
+package day00;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import Day00.FetchInput;
-import org.junit.Ignore;
-import org.junit.Rule;
-import org.junit.Test;
+import day00.FetchInput;
+import org.junit.*;
 import org.junit.contrib.java.lang.system.SystemOutRule;
+import org.junit.rules.TestName;
+import org.junit.runners.MethodSorters;
 
-
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class DayXXTest {
 
-  @Rule
+  /*@Rule
   public SystemOutRule output = new SystemOutRule().enableLog().muteForSuccessfulTests();
+*/
+  @Rule
+  public TestName name = new TestName();
+  private long start, end;
+
+  @Before
+  public void setUp() throws Exception {
+    start = System.currentTimeMillis();
+  }
+
+  @After
+  public void tearDown() throws Exception {
+    end = System.currentTimeMillis();
+    System.err.println(name.getMethodName() + ": " + (end - start) + "ms");
+  }
 
   private DayXX create(){
     return new DayXX();

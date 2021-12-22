@@ -1,4 +1,4 @@
-package Day19;
+package day19;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

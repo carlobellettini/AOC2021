@@ -1,4 +1,4 @@
-package Day00;
+package day00;
 
 import java.net.URI;
 import java.net.http.HttpClient;

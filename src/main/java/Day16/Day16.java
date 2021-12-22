@@ -1,8 +1,8 @@
-package Day16;
+package day16;
 
 import static java.lang.Integer.parseInt;
 
-import Day00.Day;
+import day00.Day;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

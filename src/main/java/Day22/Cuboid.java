@@ -1,4 +1,4 @@
-package Day22;
+package day22;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +22,19 @@ public final class Cuboid {
     this.z0 = z0;
     this.z1 = z1;
     this.on = true;
+  }
+
+  @Override
+  public String toString() {
+    return "Cuboid{" +
+         x0 +
+        "," + x1 +
+        ", " + y0 +
+        "," + y1 +
+        ", " + z0 +
+        "," + z1 +
+        ", " + on +
+        '}';
   }
 
   void setOff() {

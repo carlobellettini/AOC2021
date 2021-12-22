@@ -1,10 +1,10 @@
-package Day18;
+package day18;
 
 
 import static org.paukov.combinatorics3.Generator.combination;
 import static org.paukov.combinatorics3.Generator.permutation;
 
-import Day00.Day;
+import day00.Day;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;

@@ -1,6 +1,6 @@
-package Day06;
+package day06;
 
-import Day00.Day;
+import day00.Day;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;

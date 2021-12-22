@@ -1,8 +1,5 @@
-package Day00;
+package day00;
 
-
-
-import Day05.Griglia;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -1,7 +1,7 @@
-package Day01;
+package day01;
 
-import Day00.Common;
-import Day00.Day;
+import day00.Common;
+import day00.Day;
 
 import java.util.Scanner;
 

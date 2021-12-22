@@ -1,10 +1,10 @@
-package Day13;
+package day13;
 
 import static java.lang.Character.isDigit;
 import static java.lang.Integer.parseInt;
 
-import Day00.Day;
-import Day00.Mat;
+import day00.Day;
+import day00.Mat;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
-package Day02;
+package day02;
 
 
-import Day00.Common;
+import day00.Common;
 
 import java.util.Arrays;
 import java.util.Scanner;

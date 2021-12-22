@@ -1,6 +1,6 @@
-package Day10;
+package day10;
 
-import Day00.Day;
+import day00.Day;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;

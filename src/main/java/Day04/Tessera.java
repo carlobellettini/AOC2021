@@ -1,4 +1,4 @@
-package Day04;
+package day04;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -11,8 +11,8 @@ record Tess(int turno, int punti, int giocatore) {
 }
 
 public class Tessera {
-  private int ID;
   private final int[][] numeri = new int[5][5];
+  private int ID;
 
   public Tessera(@NotNull List<String> numbers) {
     assert numbers.size() == 5;

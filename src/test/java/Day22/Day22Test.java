@@ -1,16 +1,38 @@
-package Day22;
+package day22;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import Day00.FetchInput;
-import org.junit.Ignore;
-import org.junit.Test;
+import day00.FetchInput;
+import org.junit.*;
+import org.junit.rules.TestName;
+import org.junit.runners.MethodSorters;
 
-
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Day22Test {
 
   private Day22 create() {
     return new Day22();
+  }
+
+  long start, end;
+
+  @Rule
+  public TestName name = new TestName();
+
+  @Before
+  public void setUp() throws Exception {
+    start = System.currentTimeMillis();
+  }
+
+  @After
+  public void tearDown() throws Exception {
+    end = System.currentTimeMillis();
+    System.err.println(name.getMethodName()+": "+(end-start)+"ms");
+  }
+
+  @Test
+  public void a() {
+    System.out.println(create().toString());
   }
 
   @Test

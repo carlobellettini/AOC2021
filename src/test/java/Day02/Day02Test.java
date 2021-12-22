@@ -1,10 +1,10 @@
-package Day02;
+package day02;
 
-import static Day02.Day02.part1;
-import static Day02.Day02.part2;
+import static day02.Day02.part1;
+import static day02.Day02.part2;
 import static org.assertj.core.api.Assertions.*;
 
-import Day00.Common;
+import day00.Common;
 import org.junit.Before;
 import org.junit.Test;
 

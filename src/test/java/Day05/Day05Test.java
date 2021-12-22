@@ -1,9 +1,9 @@
-package Day05;
+package day05;
 
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import Day00.Day;
+import day00.Day;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;

@@ -1,9 +1,10 @@
-package Day04;
+package day04;
 
-import Day00.Common;
+import day00.Common;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.*;
+import java.util.List;
+import java.util.Scanner;
 
 public class Day04 {
   public static void main(String[] args) {
@@ -34,7 +35,7 @@ public class Day04 {
     int punti = 0;
     int winner = -1;
     for (Tessera tessera : gioco) {
-      Tess result  = tessera.giocaNumeri(new Scanner(input.get(0)));
+      Tess result = tessera.giocaNumeri(new Scanner(input.get(0)));
       if (result.turno() < turni) {
         turni = result.turno();
         punti = result.punti();
@@ -42,7 +43,7 @@ public class Day04 {
       }
     }
     System.out.println(winner);
-    return ""+punti;
+    return "" + punti;
   }
 
   static String part2(@NotNull List<String> input) {
@@ -55,7 +56,7 @@ public class Day04 {
     int punti = 0;
     int loser = -1;
     for (Tessera tessera : gioco) {
-      Tess result  = tessera.giocaNumeri(new Scanner(input.get(0)));
+      Tess result = tessera.giocaNumeri(new Scanner(input.get(0)));
       if (result.turno() > turni) {
         turni = result.turno();
         punti = result.punti();
@@ -63,7 +64,7 @@ public class Day04 {
       }
     }
     System.out.println(loser);
-    return ""+punti;
+    return "" + punti;
   }
 }
 

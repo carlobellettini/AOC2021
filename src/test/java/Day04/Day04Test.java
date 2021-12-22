@@ -1,11 +1,11 @@
-package Day04;
+package day04;
 
 
 import static org.assertj.core.api.Assertions.as;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.InstanceOfAssertFactories.INT_2D_ARRAY;
 
-import Day00.Common;
+import day00.Common;
 import org.junit.Before;
 import org.junit.Test;
 

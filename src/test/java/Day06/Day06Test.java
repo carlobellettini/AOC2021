@@ -1,10 +1,10 @@
-package Day06;
+package day06;
 
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import Day00.Common;
-import Day00.Day;
+import day00.Common;
+import day00.Day;
 import org.junit.Before;
 import org.junit.Test;
 

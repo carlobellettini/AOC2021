@@ -1,8 +1,8 @@
-package Day15;
+package day15;
 
-import static Day00.Mat.CelleVicine;
+import static day00.Mat.CelleVicine;
 
-import Day00.Day;
+import day00.Day;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;

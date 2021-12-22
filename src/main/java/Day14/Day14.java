@@ -1,6 +1,6 @@
-package Day14;
+package day14;
 
-import Day00.Day;
+import day00.Day;
 
 import java.util.Arrays;
 import java.util.HashMap;

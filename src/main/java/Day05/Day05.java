@@ -1,6 +1,6 @@
-package Day05;
+package day05;
 
-import Day00.Day;
+import day00.Day;
 
 public class Day05 extends Day {
   @Override

@@ -1,8 +1,8 @@
-package Day08;
+package day08;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import Day00.FetchInput;
+import day00.FetchInput;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -36,6 +36,7 @@ public class Day08Test {
   public void part2Test2() {
     assertThat(day.part2("example-3.txt")).isEqualTo("61229");
   }
+
   @Test
   public void part2Decode() {
     assertThat(day.decode("acedgfb cdfbe gcdfa fbcad dab cefabd cdfgeb eafb cagedb ab"))

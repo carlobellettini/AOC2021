@@ -1,7 +1,7 @@
-package Day22;
+package day22;
 
-import Day00.Day;
-import Day00.ReadsFormattedString;
+import day00.Day;
+import day00.ReadsFormattedString;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -13,9 +13,7 @@ public class Day22 extends Day {
 
   @Override
   protected String part1() {
-
     List<MultiCuboid> on = new ArrayList<>();
-
     for (String line : inputAsList()) {
       Cuboid c;
       if (line.startsWith("on"))
@@ -32,8 +30,7 @@ public class Day22 extends Day {
         if (c.on()) on.add(new MultiCuboid(c));
       }
     }
-
-    return String.valueOf(on.stream().mapToLong(multiCube -> multiCube.count()).sum());
+    return String.valueOf(on.stream().mapToLong(MultiCuboid::count).sum());
   }
 
   @Override
@@ -53,12 +50,10 @@ public class Day22 extends Day {
         c.setOff();
       }
 
-
       on.removeIf(multiCube -> multiCube.remove(c));
       if (c.on()) on.add(new MultiCuboid(c));
     }
-
-    return String.valueOf(on.stream().mapToLong(multiCube -> multiCube.count()).sum());
+    return String.valueOf(on.stream().mapToLong(MultiCuboid::count).sum());
   }
 }
 

@@ -1,4 +1,4 @@
-package Day12;
+package day12;
 
 import java.util.HashSet;
 import java.util.Locale;

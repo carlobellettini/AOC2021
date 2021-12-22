@@ -1,7 +1,7 @@
-package Day15;
+package day15;
 
-import Day00.Day;
-import Day00.Mat;
+import day00.Day;
+import day00.Mat;
 import org.jetbrains.annotations.NotNull;
 
 class Mat15 extends Mat {

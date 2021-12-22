@@ -1,7 +1,7 @@
-package Day11;
+package day11;
 
-import Day00.Day;
-import Day00.Mat;
+import day00.Day;
+import day00.Mat;
 
 import java.util.stream.IntStream;
 

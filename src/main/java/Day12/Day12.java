@@ -1,6 +1,6 @@
-package Day12;
+package day12;
 
-import Day00.Day;
+import day00.Day;
 
 import java.util.*;
 

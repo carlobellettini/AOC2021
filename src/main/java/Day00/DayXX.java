@@ -1,6 +1,6 @@
-package Day00;
+package day00;
 
-import Day00.Day;
+import day00.Day;
 
 import java.util.List;
 

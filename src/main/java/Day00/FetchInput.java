@@ -1,4 +1,4 @@
-package Day00;
+package day00;
 
 import org.apache.commons.io.FileUtils;
 import org.htmlcleaner.CleanerProperties;
@@ -24,7 +24,7 @@ public class FetchInput {
   private final HttpClient client;
 
   public FetchInput() {
-    this.client = Day00.WebClient.getClient();
+    this.client = day00.WebClient.getClient();
   }
 
   public static void main(String[] args)  {
