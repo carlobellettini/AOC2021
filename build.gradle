@@ -20,5 +20,6 @@ dependencies {
     implementation 'com.github.stefanbirkner:system-rules:1.19.0'
     //implementation 'org.apache.commons:commons-collections4:4.4'
     implementation 'com.github.dpaukov:combinatoricslib3:3.3.2'
+    implementation 'io.github.tudo-aqua:z3-turnkey:4.8.12'
 }
 
