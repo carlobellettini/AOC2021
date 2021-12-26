@@ -3,10 +3,12 @@ package day18;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import day00.FetchInput;
+import org.junit.FixMethodOrder;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
-
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Day18Test {
 
 
@@ -15,22 +17,14 @@ public class Day18Test {
   }
 
   @Test
-  @Ignore
-  public void getInputFiles() {
-    new FetchInput().retrieveDay("18", "2021");
-  }
-
-  @Test
   public void part1Test() {
     assertThat(create().part1("example-6.txt")).isEqualTo("3488");
     assertThat(create().part1("example-8.txt")).isEqualTo("4140");
-    System.err.println("SOLUZIONE PARTE 1: <" + create().part1() + ">");
-  }
+   }
 
   @Test
   public void part2Test() {
     assertThat(create().part2("example-8.txt")).isEqualTo("3993");
-    System.err.println("SOLUZIONE PARTE 2: <" + create().part2() + ">");
   }
 
   @Test

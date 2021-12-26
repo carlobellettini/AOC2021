@@ -9,14 +9,14 @@ import java.util.List;
 
 public class Day10 extends Day {
   @Override
-  protected String part1() {
-    return "" + inputAsList().stream().mapToLong(linea -> points(report(linea).charAt(0))).sum();
+  protected String part1(List<String> input) {
+    return "" + input.stream().mapToLong(linea -> points(report(linea).charAt(0))).sum();
   }
 
   @Override
-  protected String part2() {
+  protected String part2(List<String> input) {
     List<Long> points = new ArrayList<>();
-    for (String linea : inputAsList()) {
+    for (String linea : input) {
       String comp = report(linea);
       if (List.of('(', '[', '{', '<').contains(comp.charAt(0)))
         points.add(comp.chars().mapToLong(s -> pointsP2((char)s)).reduce((x, y) -> x = x * 5 + y).getAsLong());

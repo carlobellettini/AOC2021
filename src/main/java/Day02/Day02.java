@@ -2,26 +2,29 @@ package day02;
 
 
 import day00.Common;
+import day00.Day;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
-public class Day02 {
-
-  static String part1(Scanner input) {
+public class Day02 extends Day {
+  @Override
+  protected String part1(List<String> input) {
     IPosition pos1 = new Position();
     pos1.executeCommands(input);
     return pos1.toString();
   }
 
-  static String part2(Scanner input) {
+  @Override
+  protected String part2(List<String> input) {
     IPosition pos = new PositionWithAim();
     pos.executeCommands(input);
     return pos.toString();
   }
 
   interface IPosition {
-    void executeCommands(Scanner input);
+    void executeCommands(List<String> input);
   }
 
   private static class Position implements IPosition {
@@ -39,9 +42,9 @@ public class Day02 {
     }
 
     @Override
-    public void executeCommands(Scanner input) {
-      while (input.hasNextLine()) {
-        String[] commands = input.nextLine().split(" ");
+    public void executeCommands(List<String> input) {
+      for (String s : input) {
+        String[] commands = s.split(" ");
         final int value = Integer.parseInt(commands[1]);
         switch (commands[0]) {
           case "forward" -> forward(value);

@@ -3,6 +3,7 @@ package day17;
 import day00.Day;
 import day00.ReadsFormattedString;
 
+import java.util.List;
 import java.util.Optional;
 
 
@@ -11,8 +12,8 @@ public class Day17 extends Day {
   private Target t;
 
   @Override
-  protected String part1() {
-    t = ReadsFormattedString.readString(inputAsList().get(0), "target area: x=%d..%d, y=%d..%d", Target.class);
+  protected String part1(List<String> input) {
+    t = ReadsFormattedString.readString(input.get(0), "target area: x=%d..%d, y=%d..%d", Target.class);
 
     for (int vx = (int) Math.sqrt(t.x0()); vx <= t.x1(); vx++)
       for (int vy = 9999; vy >= t.y0(); vy--) {
@@ -47,8 +48,8 @@ public class Day17 extends Day {
   }
 
   @Override
-  protected String part2() {
-    t = ReadsFormattedString.readString(inputAsList().get(0), "target area: x=%d..%d, y=%d..%d", Target.class);
+  protected String part2(List<String> input) {
+    t = ReadsFormattedString.readString(input.get(0), "target area: x=%d..%d, y=%d..%d", Target.class);
 
     long counter = 0;
 

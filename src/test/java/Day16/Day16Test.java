@@ -3,10 +3,12 @@ package day16;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import day00.FetchInput;
+import org.junit.FixMethodOrder;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
-
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Day16Test {
 
   private Day16 create() {
@@ -14,18 +16,11 @@ public class Day16Test {
   }
 
   @Test
-  @Ignore
-  public void getInputFiles() {
-    new FetchInput().retrieveDay("16", "2021");
-  }
-
-  @Test
   public void part1Test() {
     assertThat(create().part1("example-3.txt")).isEqualTo("9");
     assertThat(create().part1("example-1.txt")).isEqualTo("16");
     assertThat(create().part1("example-2.txt")).isEqualTo("12");
-    System.err.println("SOLUZIONE PARTE 1: <" + create().part1() + ">");
-  }
+   }
 
   @Test
   public void parseStringHexTestPart2() {
@@ -43,8 +38,6 @@ public class Day16Test {
   @Test
   public void part2Test() {
     assertThat(create().parseStringHex("9C0141080250320F1802104A08")).isEqualTo("1");
-    System.err.println("SOLUZIONE PARTE 2: <" + create().part2() + ">");
-
   }
 
   @Test

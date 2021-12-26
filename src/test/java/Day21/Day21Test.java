@@ -3,34 +3,27 @@ package day21;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import day00.FetchInput;
+import org.junit.FixMethodOrder;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
-
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Day21Test {
-
 
   private Day21 create() {
     return new Day21();
   }
 
   @Test
-  @Ignore
-  public void getInputFiles() {
-    new FetchInput().retrieveDay("21", "2021");
-  }
-
-  @Test
   public void part1Test() {
     assertThat(create().part1("example-1.txt")).isEqualTo("739785");
-    //  System.err.println("SOLUZIONE PARTE 1: <" + create().part1()+">");
   }
 
   @Test
   public void part2Test() {
     assertThat(create().part2("example-1.txt")).isEqualTo("444356092776315");
-    // System.err.println("SOLUZIONE PARTE 2: <" + create().part2()+">");
-  }
+   }
 
   @Test
   public void part1TestReal() {
@@ -48,7 +41,7 @@ public class Day21Test {
   }
 
   @Test
-  public void part2TestIterativoReal() {
-    assertThat(create().part2iterativo(10, 3)).isEqualTo(93726416205179L); //input
+  public void part2TestRealIterativo() {
+    assertThat(create().part2iterativo(10, 3)).isEqualTo(93726416205179L);
   }
 }

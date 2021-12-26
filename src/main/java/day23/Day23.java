@@ -10,8 +10,7 @@ public class Day23 extends Day {
   final private PriorityQueue<Node> pq = new PriorityQueue<>(10000);
   final private Map<State, Integer> dist = new HashMap<>();
 
-  private State readState() {
-    List<String> input = inputAsList();
+  private State readState(List<String> input) {
     int dimension = input.size()- 3;
     char[][] h = new char[dimension][4];
     for (int r = 0; r < dimension; r++) {
@@ -51,13 +50,13 @@ public class Day23 extends Day {
 
 
   @Override
-  protected String part1() {
-    return String.valueOf(dijkstra(readState()));
+  protected String part1(List<String> input) {
+    return String.valueOf(dijkstra(readState(input)));
   }
 
   @Override
-  protected String part2() {
-    return String.valueOf(dijkstra(readState()));
+  protected String part2(List<String> input) {
+    return String.valueOf(dijkstra(readState(input)));
   }
 
 

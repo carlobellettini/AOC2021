@@ -1,20 +1,15 @@
 package day04;
 
 import day00.Common;
+import day00.Day;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 import java.util.Scanner;
 
-public class Day04 {
-  public static void main(String[] args) {
-    List<String> listOfStrings = Common.stringListInput(Day04.class, "input.txt");
+public class Day04 extends Day {
 
-    System.out.println("DAY 4 Part 1: " + part1After2(listOfStrings));
-    System.out.println("DAY 4 Part 2: " + part2(listOfStrings));
-  }
-
-  static String part1(@NotNull List<String> input) {
+  protected String part1(@NotNull List<String> input) {
     Bingo gioco = new Bingo(input.get(0));
     gioco.aggiungiTessere(input);
 
@@ -27,7 +22,7 @@ public class Day04 {
   }
 
 
-  static String part1After2(@NotNull List<String> input) {
+  protected String part1After2(@NotNull List<String> input) {
     Bingo gioco = new Bingo(input.get(0));
     gioco.aggiungiTessere(input);
 
@@ -42,11 +37,11 @@ public class Day04 {
         winner = result.giocatore();
       }
     }
-    System.out.println(winner);
+    //System.out.println(winner);
     return "" + punti;
   }
 
-  static String part2(@NotNull List<String> input) {
+  protected String part2(@NotNull List<String> input) {
 
     Bingo gioco = new Bingo(input.get(0));
 
@@ -63,7 +58,7 @@ public class Day04 {
         loser = result.giocatore();
       }
     }
-    System.out.println(loser);
+    //System.out.println(loser);
     return "" + punti;
   }
 }

@@ -6,8 +6,7 @@ import java.util.List;
 
 public class DayXX extends Day {
   @Override
-  protected String part1() {
-    List<String> input = inputAsList();
+  protected String part1(List<String> input) {
     for (String line : input) {
       System.out.println(line);
     }
@@ -15,7 +14,7 @@ public class DayXX extends Day {
   }
 
   @Override
-  protected String part2() {
+  protected String part2(List<String> input) {
     return super.part2();
   }
 }

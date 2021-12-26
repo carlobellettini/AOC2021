@@ -1,39 +1,31 @@
 package day01;
 
-import day00.Common;
 import day00.Day;
 
-import java.util.Scanner;
+import java.util.List;
 
 public class Day01 extends Day {
-  
-  static int sum(int windowSize, Scanner input) {
-    int[] window = new int[windowSize];
-    init(window, windowSize, input);
+
+  static int sum(int windowSize, List<String> input) {
     int counter = 0;
-    int pos = 0;
-    while (input.hasNextInt()) {
-      int nuovo = input.nextInt();
-      if (nuovo > window[pos]) counter++;
-      window[pos] = nuovo;
-      pos = (pos+1)%windowSize;
+    int[] window = new int[input.size()];
+    for (int i = 0; i < windowSize; i++) {
+      window[i] = Integer.parseInt(input.get(i));
+    }
+    for (int i = windowSize; i < input.size(); i++) {
+      window[i] = Integer.parseInt(input.get(i));
+      if (window[i] > window[i-windowSize]) counter++;
     }
     return counter;
   }
 
-  private static void init(int[] window, int windowSize, Scanner input) {
-    for (int i = 0; i < windowSize; i++) {
-      window[i] = input.nextInt();
-    }
+  @Override
+  public String part1(List<String> input) {
+    return "" + sum(1, input);
   }
 
   @Override
-  protected String part1() {
-    return ""+sum(1, inputAsScanner());
-  }
-
-  @Override
-  protected String part2() {
-    return ""+sum(3, inputAsScanner());
+  public String part2(List<String> input) {
+    return "" + sum(3, input);
   }
 }

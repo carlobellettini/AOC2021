@@ -1,32 +1,37 @@
 package day03;
 
-import static day03.Day03.part1;
-import static day03.Day03.part2;
 import static org.assertj.core.api.Assertions.assertThat;
 
-
-import day00.Common;
-import org.junit.Before;
+import org.junit.FixMethodOrder;
+import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
-
-import java.util.List;
-
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Day03Test {
 
-  List<String> listOfStrings;
-  @Before
-  public void setUp()  {
-    listOfStrings = Common.stringListInput(Day03.class, "example-1.txt");
+  private Day03 create() {
+    System.err.print("DAY03 ");
+    return new Day03();
   }
 
   @Test
   public void part1Test() {
-    assertThat(part1(listOfStrings)).isEqualTo(198);
+    assertThat(create().part1("example-1.txt")).isEqualTo("198");
   }
 
   @Test
   public void part2Test() {
-    assertThat(part2(listOfStrings)).isEqualTo(230);
+    assertThat(create().part2("example-1.txt")).isEqualTo("230");
+  }
+
+  @Test
+  public void part1TestReal() {
+    assertThat(create().part1()).isEqualTo("2003336");
+  }
+
+  @Test
+  public void part2TestReal() {
+    assertThat(create().part2()).isEqualTo("1877139");
   }
 }

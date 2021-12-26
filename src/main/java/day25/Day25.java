@@ -18,12 +18,12 @@ class Mat25 extends Mat {
 
   @Override
   public String elemFormat(int anInt) {
-    switch (anInt) {
-      case '>': return  ">";
-      case 'v': return "v";
-      case '.': return ".";
-      default: return "H";
-    }
+    return switch (anInt) {
+      case '>' -> ">";
+      case 'v' -> "v";
+      case '.' -> ".";
+      default -> "H";
+    };
   }
 
   @Override
@@ -64,8 +64,7 @@ class Mat25 extends Mat {
 
 public class Day25 extends Day {
   @Override
-  protected String part1() {
-    List<String> input = inputAsList();
+  protected String part1(List<String> input) {
     Mat25 m = new Mat25();
     m.readFrom(input);
 
@@ -75,10 +74,5 @@ public class Day25 extends Day {
       counter++;
     }
     return String.valueOf(counter);
-  }
-
-  @Override
-  protected String part2() {
-    return super.part2();
   }
 }

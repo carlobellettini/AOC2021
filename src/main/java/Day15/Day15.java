@@ -4,6 +4,8 @@ import day00.Day;
 import day00.Mat;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.List;
+
 class Mat15 extends Mat {
   public Mat15() {}
 
@@ -55,18 +57,18 @@ class Mat15 extends Mat {
 
 public class Day15 extends Day {
   @Override
-  protected String part1() {
+  protected String part1(List<String> input) {
     Mat15 mat = new Mat15();
-    mat.readFrom(inputAsList());
+    mat.readFrom(input);
 
     Mat15 risk = mat.calculateRisks();
     return String.valueOf(risk.getFinalRisk());
   }
 
   @Override
-  protected String part2() {
+  protected String part2(List<String> input) {
     Mat15 mat = new Mat15();
-    mat.readFrom(inputAsList());
+    mat.readFrom(input);
 
     mat = mat.growByFactor(5);
 

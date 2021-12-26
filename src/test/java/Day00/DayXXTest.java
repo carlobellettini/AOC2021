@@ -3,6 +3,7 @@ package day00;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import day00.FetchInput;
+import day01.Day01;
 import org.junit.*;
 import org.junit.contrib.java.lang.system.SystemOutRule;
 import org.junit.rules.TestName;
@@ -14,20 +15,6 @@ public class DayXXTest {
   /*@Rule
   public SystemOutRule output = new SystemOutRule().enableLog().muteForSuccessfulTests();
 */
-  @Rule
-  public TestName name = new TestName();
-  private long start, end;
-
-  @Before
-  public void setUp() throws Exception {
-    start = System.currentTimeMillis();
-  }
-
-  @After
-  public void tearDown() throws Exception {
-    end = System.currentTimeMillis();
-    System.err.println(name.getMethodName() + ": " + (end - start) + "ms");
-  }
 
   private DayXX create(){
     return new DayXX();

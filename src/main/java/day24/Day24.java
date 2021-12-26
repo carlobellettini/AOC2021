@@ -21,9 +21,9 @@ public class Day24 extends Day {
 
 
   @Override
-  protected String part1() {
+  protected String part1(List<String> input) {
     List<String[]> prog = new ArrayList<>();
-    for (String s : inputAsList())
+    for (String s : input)
       prog.add(s.split(" "));
 
     defineSolver(prog);
@@ -31,23 +31,22 @@ public class Day24 extends Day {
     var target = defineTarget();
 
     solver.Push();
-    var solP1 = solver.MkMaximize(target);
+    var sol = solver.MkMaximize(target);
     solver.Check();
-    System.out.println("P1: " + solP1);
-
 /*
+System.out.println("P1: " + solP1);
     solver.Pop();
     var solP2 = solver.MkMinimize(target);
     solver.Check();
     System.out.println("P2: " + solP2);*/
 
-    return solP1.toString();
+    return sol.toString();
   }
 
   @Override
-  protected String part2() {
+  protected String part2(List<String> input) {
     List<String[]> prog = new ArrayList<>();
-    for (String s : inputAsList())
+    for (String s : input)
       prog.add(s.split(" "));
 
     defineSolver(prog);
@@ -56,10 +55,10 @@ public class Day24 extends Day {
 
     var sol = solver.MkMinimize(target);
     solver.Check();
-    System.out.println("P2: " + sol);
 
     return sol.toString();
   }
+
   Optimize defineSolver(List<String[]> prog) {
 
     solver = ctx.mkOptimize();

@@ -4,35 +4,30 @@ package day12;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import day00.FetchInput;
+import org.junit.FixMethodOrder;
 import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.contrib.java.lang.system.SystemOutRule;
+import org.junit.runners.MethodSorters;
 
 import java.util.List;
 import java.util.stream.Stream;
 
-
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Day12Test {
 
-  @Rule
-  public SystemOutRule output = new SystemOutRule().enableLog().muteForSuccessfulTests();
+ /* @Rule
+  public SystemOutRule output = new SystemOutRule().enableLog();*/
 
   private Day12 create() {
     return new Day12();
   }
 
   @Test
-  @Ignore
-  public void getInputFiles() {
-    new FetchInput().retrieveDay("12", "2021");
-  }
-
-  @Test
   public void part1Test() {
     assertThat(create().part1("example-4.txt")).isEqualTo("19");
     assertThat(create().part1("example-6.txt")).isEqualTo("226");
-    System.err.println("SOLUZIONE PARTE 1: <" + create().part1() + ">");
   }
 
   @Test
@@ -40,7 +35,6 @@ public class Day12Test {
     assertThat(create().part2("example-1.txt")).isEqualTo("36");
     assertThat(create().part2("example-4.txt")).isEqualTo("103");
     assertThat(create().part2("example-6.txt")).isEqualTo("3509");
-    System.err.println("SOLUZIONE PARTE 2: <" + create().part2() + ">");
   }
 
   @Test
@@ -53,7 +47,7 @@ public class Day12Test {
     assertThat(create().part2()).isEqualTo("84271");
   }
 
-  @Test
+  @Test@Ignore
   public void pathOutputTest() {
     final Day12 day12 = new Day12();
     assertThat(day12.part2("example-1.txt")).isEqualTo("36");

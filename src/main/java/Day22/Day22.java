@@ -12,9 +12,9 @@ public class Day22 extends Day {
 
 
   @Override
-  protected String part1() {
+  protected String part1(List<String> input) {
     List<MultiCuboid> on = new ArrayList<>();
-    for (String line : inputAsList()) {
+    for (String line : input) {
       Cuboid c;
       if (line.startsWith("on"))
         c = ReadsFormattedString.readString(line.substring(3),
@@ -34,11 +34,11 @@ public class Day22 extends Day {
   }
 
   @Override
-  protected String part2() {
+  protected String part2(List<String> input) {
 
     List<MultiCuboid> on = new ArrayList<>();
 
-    for (String line : inputAsList()) {
+    for (String line : input) {
       Cuboid c;
 
       if (line.startsWith("on"))

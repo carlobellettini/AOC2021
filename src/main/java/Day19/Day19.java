@@ -3,6 +3,7 @@ package day19;
 import static java.lang.Math.abs;
 import static java.lang.Math.max;
 
+import day00.Day;
 import org.paukov.combinatorics3.Generator;
 
 import java.io.InputStream;
@@ -10,35 +11,41 @@ import java.util.*;
 import java.util.stream.Stream;
 
 
-public class Day19 {
+public class Day19 extends Day {
   static private final List<List<Integer>> comb = Generator.permutation(0, 1, 2).simple().stream().toList();
   private final HashMap<Coord, List<MatRighe>> mappa = new HashMap<>();
-  String input = "input.txt";
   private Mat[] scannersBeacons;
   private Coord[] scannersPos;
 
-  public void common_start() {
-    readInput();
-    normalizzaCoordinate();
-  }
 
-  public int part_1() {
-    return numberOfBeacons();
-  }
-
-  public int part_2() {
-    return maxManhattanDistance();
-  }
-
-  private void readInput() {
-    InputStream inputStream = getClass().getResourceAsStream(input);
-    assert inputStream != null : "error in reading resource " + input;
-    Scanner sc = new Scanner(inputStream);
+  @Override
+  protected List<String> inputAsList() {
+    Scanner sc = inputAsScanner();
     sc.useDelimiter("--- scanner [0123456789]* ---\n");
-    int scan = 0;
-    List<Mat> list = new ArrayList<>();
+    List<String> input = new ArrayList<>();
     while (sc.hasNext()) {
-      String scannerBeacons = sc.next();
+      input.add(sc.next());
+    }
+    sc.close();
+    return input;
+  }
+
+  @Override
+  public String part1(List<String> input) {
+    parseInput(input);
+    normalizzaCoordinate();
+    return String.valueOf(numberOfBeacons());
+  }
+
+  public String part2(List<String> input) {
+    parseInput(input);
+    normalizzaCoordinate();
+    return String.valueOf(maxManhattanDistance());
+  }
+
+  private void parseInput(List<String> input) {
+    List<Mat> list = new ArrayList<>();
+    for (String scannerBeacons : input) {
       Mat m = new Mat();
       m.readFromCVS(List.of(scannerBeacons.split("\n")));
       list.add(m);

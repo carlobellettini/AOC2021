@@ -12,8 +12,7 @@ import java.util.stream.IntStream;
 
 public class Day18 extends Day {
   @Override
-  protected String part1() {
-    List<String> input = inputAsList();
+  protected String part1(List<String> input) {
     Tree result = new Tree(input.get(0));
 
     for (int i = 1; i < input.size(); i++) {
@@ -26,8 +25,7 @@ public class Day18 extends Day {
   }
 
   @Override
-  protected String part2() {
-    List<String> input = inputAsList();
+  protected String part2(List<String> input) {
 
     var combs = combination(IntStream.range(0, input.size()).boxed().toList()).simple(2).stream()
         .flatMap(c -> permutation(c).simple().stream()).toList();

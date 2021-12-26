@@ -3,12 +3,14 @@ package day13;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import day00.FetchInput;
+import org.junit.FixMethodOrder;
 import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.contrib.java.lang.system.SystemOutRule;
+import org.junit.runners.MethodSorters;
 
-
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Day13Test {
 
 
@@ -20,15 +22,10 @@ public class Day13Test {
     return new Day13();
   }
 
-  @Test@Ignore
-  public void getInputFiles() {
-    new FetchInput().retrieveDay("13", "2021");
-  }
 
   @Test
   public void part1Test() {
     assertThat(create().part1("example-2.txt")).isEqualTo("17");
-  //  System.err.println("SOLUZIONE PARTE 1: <" + create().part1()+">");
   }
 
   @Test
@@ -44,10 +41,8 @@ public class Day13Test {
         .....
         .....
         """);
-    System.err.println("Dovresti leggere < O >");
-
-//    System.err.println("SOLUZIONE PARTE 2: <" + create().part2()+">");
-  }
+    System.out.println("Dovresti leggere < O >");
+}
 
   @Test
   public void part1TestReal() {
@@ -65,6 +60,6 @@ public class Day13Test {
         #....#....#.#..#....#.#..#..#.#....#....
         #....#....#..#.####.#..#..##..#....#....
         """);
-    System.err.println("Dovresti leggere < PFKLKCFP >");
+    System.out.println("Dovresti leggere < PFKLKCFP >");
   }
 }

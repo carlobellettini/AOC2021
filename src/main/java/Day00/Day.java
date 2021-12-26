@@ -7,17 +7,25 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.Spliterator;
 import java.util.Spliterators;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
 public class Day {
+  static {
+    System.setProperty("java.util.logging.SimpleFormatter.format",
+        "%5$s%n");
+  }
+
   String input = "input.txt";
+  Logger log = Logger.getAnonymousLogger();
 
   final protected Scanner inputAsScanner() {
     return Common.scannerInput(this.getClass(), input);
   }
 
-  final protected List<String> inputAsList() {
+  protected List<String> inputAsList() {
     return Common.stringListInput(this.getClass(), input);
   }
 
@@ -42,11 +50,29 @@ public class Day {
     return null;
   }
 
-  protected String part1() {
+  public String part1() {
+    List<String> input = inputAsList();
+    long start = System.nanoTime();
+    String s = part1(input);
+    long end = System.nanoTime();
+    log.info("["+getClass().getSimpleName()+ " P1] "+ ((end - start)/1000000.0) + "ms");
+    return s;
+  }
+
+  public String part2() {
+    List<String> input = inputAsList();
+    long start = System.nanoTime();
+    String s = part2(input);
+    long end = System.nanoTime();
+    log.info("["+getClass().getSimpleName()+ " P2] "+ (end - start)/1000000.0 + "ms");
+    return s;
+  }
+
+  protected String part1(List<String> input) {
     return "!!!";
   }
 
-  protected String part2() {
+  protected String part2(List<String> input) {
     return "!!!";
   }
 

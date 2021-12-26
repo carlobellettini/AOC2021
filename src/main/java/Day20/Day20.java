@@ -46,10 +46,9 @@ class Mat20 extends Mat {
 
 public class Day20 extends Day {
   @Override
-  protected String part1() {
+  protected String part1(List<String> input) {
     int numsteps = 2;
 
-    List<String> input = inputAsList();
     String algo = input.get(0);
 
     Mat20 g = readMat(numsteps + 1, input);
@@ -60,10 +59,9 @@ public class Day20 extends Day {
   }
 
   @Override
-  protected String part2() {
+  protected String part2(List<String> input) {
     int numsteps = 50;
 
-    List<String> input = inputAsList();
     String algo = input.get(0);
 
     Mat20 g = readMat(numsteps + 1, input);

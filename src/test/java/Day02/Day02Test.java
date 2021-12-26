@@ -1,31 +1,37 @@
 package day02;
 
-import static day02.Day02.part1;
-import static day02.Day02.part2;
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
-import day00.Common;
-import org.junit.Before;
+import org.junit.FixMethodOrder;
+import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
-import java.util.Scanner;
-
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Day02Test {
 
-  private Scanner input;
-
-  @Before
-  public void setUp()  {
-    input = Common.scannerInput(Day02.class, "example-1.txt");
+  private Day02 create() {
+    return new Day02();
   }
 
   @Test
   public void part1Test() {
-    assertThat(part1(input)).isEqualTo("150  (= 15 * 10)");
+    assertThat(create().part1("example-1.txt")).isEqualTo("150  (= 15 * 10)");
   }
 
   @Test
   public void part2Test() {
-    assertThat(part2(input)).isEqualTo("900  (= 15 * 60)");
+    assertThat(create().part2("example-1.txt")).isEqualTo("900  (= 15 * 60)");
   }
+
+  @Test
+  public void part1TestReal() {
+    assertThat(create().part1()).isEqualTo("1815044  (= 1988 * 913)");
+  }
+
+  @Test
+  public void part2TestReal() {
+    assertThat(create().part2()).isEqualTo("1739283308  (= 1988 * 874891)");
+  }
+
 }

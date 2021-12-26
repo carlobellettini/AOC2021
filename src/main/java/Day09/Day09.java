@@ -8,9 +8,7 @@ import java.util.stream.Stream;
 
 public class Day09 extends Day {
   @Override
-  protected String part1() {
-    List<String> input = inputAsList();
-
+  protected String part1(List<String> input) {
     int rows = input.size();
     int cols = input.get(0).length();
     int[][] mat = readMatrix(input, rows);
@@ -26,18 +24,7 @@ public class Day09 extends Day {
 
 
   @Override
-  protected String part2() {
-    String ans1 = part2_recursive();
-    String ans2 = part2_iterative();
-
-    assert (ans1.equals(ans2));
-
-    return ans1;
-  }
-
-  private String part2_recursive() {
-    List<String> input = inputAsList();
-
+  protected String part2(List<String> input) {
     int rows = input.size();
     int cols = input.get(0).length();
 

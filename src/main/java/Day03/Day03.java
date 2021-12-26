@@ -2,22 +2,15 @@ package day03;
 
 
 import day00.Common;
+import day00.Day;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Day03 {
-
-  public static void main(String[] args) {
-    List<String> listOfStrings = Common.stringListInput(Day03.class, "input.txt");
-
-    System.out.println("DAY 3 Part 1: " + part1(listOfStrings));
-    System.out.println("DAY 3 Part 2: " + part2(listOfStrings));
-  }
-
-  static int part2(List<String> input) {
-    return Integer.parseInt(part2_recursive(new ArrayList<>(input), 0, true), 2) *
-           Integer.parseInt(part2_recursive(input, 0, false), 2);
+public class Day03 extends Day {
+  protected String part2(List<String> input) {
+    return String.valueOf(Integer.parseInt(part2_recursive(new ArrayList<>(input), 0, true), 2) *
+           Integer.parseInt(part2_recursive(input, 0, false), 2));
   }
 
   private static String part2_recursive(List<String> input, int iteration, boolean oxygen) {
@@ -39,7 +32,7 @@ public class Day03 {
     return ones >= (input.size() + 1) / 2 ? '1' : '0';
   }
 
-  static int part1(List<String> input) {
+  protected String part1(List<String> input) {
     StringBuilder primo = new StringBuilder();
     StringBuilder secondo = new StringBuilder();
     for (int i = 0; i < input.get(0).length(); i++) {
@@ -47,6 +40,6 @@ public class Day03 {
       primo.append(common);
       secondo.append(common == '1' ? '0' : '1');
     }
-    return Integer.parseInt(primo.toString(), 2) * Integer.parseInt(secondo.toString(), 2);
+    return String.valueOf(Integer.parseInt(primo.toString(), 2) * Integer.parseInt(secondo.toString(), 2));
   }
 }

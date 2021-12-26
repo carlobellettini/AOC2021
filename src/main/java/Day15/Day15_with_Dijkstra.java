@@ -6,6 +6,7 @@ import day00.Day;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
 
@@ -44,15 +45,15 @@ public class Day15_with_Dijkstra extends Day {
   }
 
   @Override
-  protected String part1() {
-    adj.readFrom(inputAsList());
+  protected String part1(List<String> input) {
+    adj.readFrom(input);
     dijkstra(new Coords(0, 0));
     return "" + dist.get(new Coords(adj.rows() - 1, adj.columns() - 1));
   }
 
   @Override
-  protected String part2() {
-    adj.readFrom(inputAsList());
+  protected String part2(List<String> input) {
+    adj.readFrom(input);
 
     adj = adj.growByFactor(5);
 

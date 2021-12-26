@@ -14,8 +14,7 @@ public class Day16 extends Day {
   String expr = "";
 
   @Override
-  protected String part1() {
-    List<String> input = inputAsList();
+  protected String part1(List<String> input) {
     final String s = input.get(0);
     parseStringHex(s);
     return "" + versionSum;
@@ -101,8 +100,7 @@ public class Day16 extends Day {
   }
 
   @Override
-  protected String part2() {
-    List<String> input = inputAsList();
+  protected String part2(List<String> input) {
     StringBuilder bin = new StringBuilder();
 
     final String s = input.get(0);

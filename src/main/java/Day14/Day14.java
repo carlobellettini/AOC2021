@@ -13,15 +13,15 @@ public class Day14 extends Day {
   final HashMap<String, String> rules = new HashMap<>();
 
   @Override
-  protected String part1() {
-    long[] charCounters = simulateAndCount(inputAsList(), 10);
+  protected String part1(List<String> input) {
+    long[] charCounters = simulateAndCount(input, 10);
     var sorted = Arrays.stream(charCounters).filter(x -> x > 0).sorted().toArray();
     return "" + (sorted[sorted.length - 1] - sorted[0]);
   }
 
   @Override
-  protected String part2() {
-    long[] charCounters = simulateAndCount(inputAsList(), 40);
+  protected String part2(List<String> input) {
+    long[] charCounters = simulateAndCount(input, 40);
     var sorted = Arrays.stream(charCounters).filter(x -> x > 0).sorted().toArray();
     return "" + (sorted[sorted.length - 1] - sorted[0]);
   }

@@ -9,15 +9,15 @@ import java.util.stream.Stream;
 
 public class Day08 extends Day {
   @Override
-  protected String part1() {
-    return "" + inputAsList().stream().map(s -> s.split("\\|"))
+  public String part1(List<String> input) {
+    return "" + input.stream().map(s -> s.split("\\|"))
         .mapToInt(part -> (int) Stream.of(part[1].split(" "))
             .filter(num -> List.of(2, 3, 4, 7).contains(num.length())).count()).sum();
   }
 
   @Override
-  protected String part2() {
-    return "" + inputAsList().stream().map(s -> s.split("\\|"))
+  public String part2(List<String> input) {
+    return "" + input.stream().map(s -> s.split("\\|"))
         .mapToInt(part -> valDecoded(decode(part[0]), part[1])).sum();
   }
 

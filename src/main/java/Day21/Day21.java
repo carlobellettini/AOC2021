@@ -63,9 +63,7 @@ public class Day21 extends Day {
   }
 
   @Override
-  protected String part1() {
-    // very simple parser
-    var input = inputAsList();
+  protected String part1(List<String> input) {
     int[] positions = {
         Integer.parseInt(input.get(0).substring(28)),
         Integer.parseInt(input.get(1).substring(28))
@@ -92,8 +90,7 @@ public class Day21 extends Day {
   }
 
   @Override
-  protected String part2() {
-    List<String> input = inputAsList();
+  protected String part2(List<String> input) {
     int[] positions = {
         Integer.parseInt(input.get(0).substring(28)),
         Integer.parseInt(input.get(1).substring(28))

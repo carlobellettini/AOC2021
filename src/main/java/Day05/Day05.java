@@ -2,20 +2,22 @@ package day05;
 
 import day00.Day;
 
+import java.util.List;
+
 public class Day05 extends Day {
   @Override
-  protected String part1() {
+  public String part1(List<String> input) {
     Griglia venti = new Griglia(false);
-    for (String s : inputAsList()) {
+    for (String s : input) {
       venti.addLine(s);
     }
     return "" + venti.contaIncroci();
   }
 
   @Override
-  protected String part2() {
+  public String part2(List<String> input) {
     Griglia venti = new Griglia(true);
-    for (String s : inputAsList()) {
+    for (String s : input) {
       venti.addLine(s);
     }
     return "" + venti.contaIncroci();

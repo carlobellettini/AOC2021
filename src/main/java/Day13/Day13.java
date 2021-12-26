@@ -67,9 +67,7 @@ class Mat13 extends Mat {
 
 public class Day13 extends Day {
   @Override
-  protected String part1() {
-
-    List<String> input = inputAsList();
+  protected String part1(List<String> input) {
 
     Mat13 m = new Mat13();
     m.readFromCVS(input);
@@ -86,9 +84,7 @@ public class Day13 extends Day {
   }
 
   @Override
-  protected String part2() {
-
-    List<String> input = inputAsList();
+  protected String part2(List<String> input) {
 
     Mat13 m = new Mat13();
     m.readFromCVS(input);

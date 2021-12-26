@@ -12,9 +12,8 @@ import java.util.stream.IntStream;
 
 public class Day07 extends Day {
   @Override
-  protected String part1() {
-    Scanner scanner = inputAsScanner();
-    List<Integer> pos = getIntegerList(scanner);
+  protected String part1(List<String> input) {
+    List<Integer> pos = getIntegerList(new Scanner(input.get(0)));
 
     int min = pos.stream().min(Comparator.naturalOrder()).get();
     int max = pos.stream().max(Comparator.naturalOrder()).get();
@@ -25,9 +24,8 @@ public class Day07 extends Day {
 
 
   @Override
-  protected String part2() {
-    Scanner scanner = inputAsScanner();
-    List<Integer> pos = getIntegerList(scanner);
+  protected String part2(List<String> input) {
+    List<Integer> pos = getIntegerList(new Scanner(input.get(0)));
 
     int min = pos.stream().min(Comparator.naturalOrder()).get();
     int max = pos.stream().max(Comparator.naturalOrder()).get();

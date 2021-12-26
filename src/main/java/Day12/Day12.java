@@ -8,8 +8,8 @@ public class Day12 extends Day {
   //List<String> paths = new ArrayList<>();
 
   @Override
-  protected String part1() {
-    return "" + visitFrom(getRootOfGraph(inputAsList()), new ArrayDeque<>(), true);
+  protected String part1(List<String> input) {
+    return "" + visitFrom(getRootOfGraph(input), new ArrayDeque<>(), true);
   }
 
   private Node getRootOfGraph(List<String> input) {
@@ -55,8 +55,8 @@ public class Day12 extends Day {
   }
 
   @Override
-  protected String part2() {
-    return "" + visitFrom(getRootOfGraph(inputAsList()), new ArrayDeque<>(), false);
+  protected String part2(List<String> input) {
+    return "" + visitFrom(getRootOfGraph(input), new ArrayDeque<>(), false);
   }
 
   /*private String stringPath(Deque<Node> visited) {

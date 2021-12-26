@@ -4,45 +4,37 @@ package day10;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import day00.FetchInput;
+import day09.Day09;
 import org.junit.Before;
+import org.junit.FixMethodOrder;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
-
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Day10Test {
 
-  private Day10 day;
-
-  @Before
-  public void setUp() {
-    day = new Day10();
-  }
-
-
-  @Test@Ignore
-  public void getInputFiles() {
-    new FetchInput().retrieveDay("10", "2021");
+  public Day10 create() {
+    return new Day10();
   }
 
   @Test
   public void part1Test() {
-    assertThat(day.part1("example-2.txt")).isEqualTo("26397");
+    assertThat(create().part1("example-2.txt")).isEqualTo("26397");
   }
 
   @Test
   public void part2Test() {
-    assertThat(day.part2("example-2.txt")).isEqualTo("288957");
+    assertThat(create().part2("example-2.txt")).isEqualTo("288957");
   }
-
-
 
   @Test
   public void part1TestReal() {
-    assertThat(day.part1()).isEqualTo("399153");
+    assertThat(create().part1()).isEqualTo("399153");
   }
 
   @Test
   public void part2TestReal() {
-    assertThat(day.part2()).isEqualTo("2995077699");
+    assertThat(create().part2()).isEqualTo("2995077699");
   }
 }

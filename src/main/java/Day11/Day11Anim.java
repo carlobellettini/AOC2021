@@ -3,6 +3,8 @@ package day11;
 import day00.Day;
 import day00.Mat;
 
+import java.util.List;
+
 
 public class Day11Anim extends Day {
 
@@ -14,9 +16,9 @@ public class Day11Anim extends Day {
 
 
   @Override
-  protected String part1() {
+  protected String part1(List<String> input) {
     Mat11 m = new Mat11();
-    m.readFrom(inputAsList());
+    m.readFrom(input);
 
 
     long flashed = 0;
@@ -30,9 +32,9 @@ public class Day11Anim extends Day {
 
 
   @Override
-  protected String part2() {
+  protected String part2(List<String> input) {
     Mat11 m = new Mat11();
-    m.readFrom(inputAsList());
+    m.readFrom(input);
 
     int iterazioni = 0;
     long flashed;

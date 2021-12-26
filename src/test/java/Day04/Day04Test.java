@@ -7,23 +7,51 @@ import static org.assertj.core.api.InstanceOfAssertFactories.INT_2D_ARRAY;
 
 import day00.Common;
 import org.junit.Before;
+import org.junit.FixMethodOrder;
+import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
 import java.util.List;
 import java.util.Scanner;
 
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Day04Test {
 
-  List<String> listOfStrings;
+  private List<String> listOfStrings;
+
+  private Day04 create() {
+    return new Day04();
+  }
+
+  @Test
+  public void part1Test() {
+    assertThat(create().part1("example-1.txt")).isEqualTo("4512");
+  }
+
+  @Test
+  public void part2Test() {
+    assertThat(create().part2("example-1.txt")).isEqualTo("1924");
+  }
+
+  @Test
+  public void part1TestReal() {
+    assertThat(create().part1()).isEqualTo("49686");
+  }
+
+  @Test
+  public void part2TestReal() {
+    assertThat(create().part2()).isEqualTo("26878");
+  }
 
   @Before
-  public void setUp()  {
+  public void setUp() {
     listOfStrings = Common.stringListInput(Day04.class, "example-1.txt");
   }
 
   @Test
   public void testCostruttoreTessera() {
-    Tessera mia = new Tessera(listOfStrings.subList(2, 2 + 5));
+    Tessera mia = new Tessera(Common.stringListInput(Day04.class, "example-1.txt").subList(2, 2 + 5));
     assertThat(mia).extracting("numeri", as(INT_2D_ARRAY)).isDeepEqualTo(new int[][]{
         {22, 13, 17, 11, 0},
         {8, 2, 23, 4, 24},
@@ -80,30 +108,7 @@ public class Day04Test {
 
     Tess res = SUT.giocaNumeri(new Scanner(listOfStrings.get(0)));
 
-    System.err.println(res);
     assertThat(res.punti()).isEqualTo(4512);
     assertThat(res.turno()).isEqualTo(12);
-  }
-
-  @Test
-  public void part1Test() {
-    assertThat(Day04.part1(listOfStrings)).isEqualTo("4512");
-  }
-
-  @Test
-  public void part2Test() {
-    assertThat(Day04.part2(listOfStrings)).isEqualTo("1924");
-  }
-
-  @Test
-  public void part1TestReal() {
-    assertThat(Day04.part1(Common.stringListInput(Day04.class, "input.txt"))).isEqualTo("49686");
-    assertThat(Day04.part1After2(Common.stringListInput(Day04.class, "input.txt"))).isEqualTo("49686");
-  }
-
-  @Test
-  public void part2TestReal() {
-    assertThat(Day04.part2(Common.stringListInput(Day04.class, "input.txt"))).isEqualTo("26878");
-
   }
 }
