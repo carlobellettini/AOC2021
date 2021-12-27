@@ -1,6 +1,6 @@
 .gitsecret/keys/random_seed
 !*.secret
-src/main/java/Day00/SessionSecrets.java
+src/main/java/day00/SessionSecrets.java
 build
 .gradle
 .idea

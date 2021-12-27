@@ -23,3 +23,11 @@ dependencies {
     implementation 'io.github.tudo-aqua:z3-turnkey:4.8.12'
 }
 
+test {
+    onOutput { descriptor, event ->
+        def withoutLastLineFeed = event.message.substring(0, event.message.length() - 1)
+        logger.lifecycle("{} ===> {}",
+                event.destination,
+                withoutLastLineFeed)
+    }
+}
