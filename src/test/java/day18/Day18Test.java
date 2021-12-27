@@ -2,9 +2,7 @@ package day18;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import day00.FetchInput;
 import org.junit.FixMethodOrder;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
@@ -20,7 +18,7 @@ public class Day18Test {
   public void part1Test() {
     assertThat(create().part1("example-6.txt")).isEqualTo("3488");
     assertThat(create().part1("example-8.txt")).isEqualTo("4140");
-   }
+  }
 
   @Test
   public void part2Test() {

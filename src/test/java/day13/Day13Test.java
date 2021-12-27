@@ -2,9 +2,7 @@ package day13;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import day00.FetchInput;
 import org.junit.FixMethodOrder;
-import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.contrib.java.lang.system.SystemOutRule;
@@ -18,7 +16,7 @@ public class Day13Test {
   public SystemOutRule output = new SystemOutRule().enableLog().muteForSuccessfulTests();
 
 
-  private Day13 create(){
+  private Day13 create() {
     return new Day13();
   }
 
@@ -42,7 +40,7 @@ public class Day13Test {
         .....
         """);
     System.out.println("Dovresti leggere < O >");
-}
+  }
 
   @Test
   public void part1TestReal() {

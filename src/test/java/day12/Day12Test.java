@@ -3,12 +3,9 @@ package day12;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import day00.FetchInput;
 import org.junit.FixMethodOrder;
 import org.junit.Ignore;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.contrib.java.lang.system.SystemOutRule;
 import org.junit.runners.MethodSorters;
 
 import java.util.List;
@@ -16,9 +13,6 @@ import java.util.stream.Stream;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Day12Test {
-
- /* @Rule
-  public SystemOutRule output = new SystemOutRule().enableLog();*/
 
   private Day12 create() {
     return new Day12();
@@ -47,7 +41,8 @@ public class Day12Test {
     assertThat(create().part2()).isEqualTo("84271");
   }
 
-  @Test@Ignore
+  @Test
+  @Ignore
   public void pathOutputTest() {
     final Day12 day12 = new Day12();
     assertThat(day12.part2("example-1.txt")).isEqualTo("36");

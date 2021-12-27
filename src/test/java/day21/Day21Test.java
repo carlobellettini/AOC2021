@@ -2,9 +2,7 @@ package day21;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import day00.FetchInput;
 import org.junit.FixMethodOrder;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
@@ -23,7 +21,7 @@ public class Day21Test {
   @Test
   public void part2Test() {
     assertThat(create().part2("example-1.txt")).isEqualTo("444356092776315");
-   }
+  }
 
   @Test
   public void part1TestReal() {

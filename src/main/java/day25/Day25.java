@@ -68,7 +68,6 @@ public class Day25 extends Day {
     Mat25 m = new Mat25();
     m.readFrom(input);
 
-    System.out.println();
     long counter = 1;
     while (m.step()) {
       counter++;

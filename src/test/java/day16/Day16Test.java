@@ -2,9 +2,7 @@ package day16;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import day00.FetchInput;
 import org.junit.FixMethodOrder;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
@@ -20,7 +18,7 @@ public class Day16Test {
     assertThat(create().part1("example-3.txt")).isEqualTo("9");
     assertThat(create().part1("example-1.txt")).isEqualTo("16");
     assertThat(create().part1("example-2.txt")).isEqualTo("12");
-   }
+  }
 
   @Test
   public void parseStringHexTestPart2() {

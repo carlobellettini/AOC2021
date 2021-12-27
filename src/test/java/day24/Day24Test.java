@@ -2,16 +2,14 @@ package day24;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import day00.FetchInput;
-import org.junit.*;
-import org.junit.contrib.java.lang.system.SystemOutRule;
-import org.junit.rules.TestName;
+import org.junit.FixMethodOrder;
+import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Day24Test {
 
-  private Day24 create(){
+  private Day24 create() {
     return new Day24();
   }
 

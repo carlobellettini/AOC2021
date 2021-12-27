@@ -3,11 +3,7 @@ package day10;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import day00.FetchInput;
-import day09.Day09;
-import org.junit.Before;
 import org.junit.FixMethodOrder;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
